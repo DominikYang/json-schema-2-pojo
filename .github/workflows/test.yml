@@ -17,9 +17,13 @@ jobs:
           mkdir docker
           cd docker
           mkdir output
+          cd workdir
+      - name: Checkout
+        uses: actions/checkout@master
+      - run: ls -la
       - uses: DominikYang/json-schema-2-pojo@master
         with:
-          srcPath: src/main/resources/path
+          srcPath: /tmp/workdir/schema
           outPath: /tmp/workdir/docker/output
           packageNameForVO: com.example.test.vo
           packageNameForDTO: com.example.test.dto
