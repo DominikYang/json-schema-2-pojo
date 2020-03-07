@@ -17,7 +17,7 @@ jobs:
           mkdir docker
           cd docker
           mkdir output
-          cd workdir
+          cd ../../workdir
       - name: Checkout
         uses: actions/checkout@master
       - run: ls -la
