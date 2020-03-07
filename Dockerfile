@@ -1,4 +1,4 @@
-FROM openjdk:8-jre-alpine
+FROM frolvlad/alpine-java:jre8-slim
 MAINTAINER Dominikyang
 VOLUME /tmp/workdir/docker/output
 WORKDIR /tmp/workdir
