@@ -5,4 +5,4 @@ WORKDIR /tmp/workdir
 COPY schema /tmp/workdir/schema
 COPY jsonschema2pojo.jar /tmp/workdir/jsonschema2pojo.jar
 
-ENTRYPOINT ["java","-jar","jsonschema2pojo.jar","-srcPath=$1","-outPath=$2","-packageNameForVO=$3","-packageNameForVO=$4"]
+ENTRYPOINT ["java","-jar","jsonschema2pojo.jar","-srcPath=$1","-outPath=$2","-packageNameVO=$3","-packageNameDTO=$4"]
