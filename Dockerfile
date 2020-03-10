@@ -4,5 +4,7 @@ VOLUME /tmp/workdir/docker/output
 WORKDIR /tmp/workdir
 COPY schema /tmp/workdir/schema
 COPY jsonschema2pojo.jar /tmp/workdir/jsonschema2pojo.jar
-
-ENTRYPOINT ["java","-jar","jsonschema2pojo.jar","jsonPath=$1","outPath=$2","packageNameVO=$3","packageNameDTO=$4"]
+COPY entrypoint.sh /tmp/workdir/entrypoint.sh
+RUN chmod +x entrypoint.sh
+ENTRYPOINT ["./entrypoint.sh"]
+#ENTRYPOINT ["java","-jar","jsonschema2pojo.jar","jsonPath=$1","outPath=$2","packageNameVO=$3","packageNameDTO=$4"]
