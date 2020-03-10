@@ -5,7 +5,7 @@ WORKDIR /tmp/workdir
 COPY schema /tmp/workdir/schema
 COPY jsonschema2pojo.jar /tmp/workdir/jsonschema2pojo.jar
 COPY entrypoint.sh /tmp/workdir/entrypoint.sh
-RUN java -jar json-schema-to-pojo-1.0-SNAPSHOT.jar jsonPath=$1 outPath=$2 packageNameVO=$3 packageNameDTO=$4
+RUN java -jar jsonschema2pojo.jar jsonPath=$1 outPath=$2 packageNameVO=$3 packageNameDTO=$4
 #RUN chmod +x /tmp/workdir/entrypoint.sh
 #ENTRYPOINT ["./entrypoint.sh"]
 #ENTRYPOINT ["java","-jar","jsonschema2pojo.jar","jsonPath=$1","outPath=$2","packageNameVO=$3","packageNameDTO=$4"]
